@@ -1,5 +1,6 @@
 import os
 import email
+import pickle
 from email import policy
 from bs4 import BeautifulSoup
 
@@ -47,5 +48,7 @@ directory = input("Enter the directory path: ").strip()
 keywords = input("Enter the keywords, separated by commas: ").split(",")
 keywords = [keyword.strip() for keyword in keywords]  # Remove whitespace
 emails = parse_emails(directory, keywords)
-for email in emails:
-    print(email)
+
+    # After extracting the emails
+with open('emails.pkl', 'wb') as file:
+    pickle.dump(emails, file)

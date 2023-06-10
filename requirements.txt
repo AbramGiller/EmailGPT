@@ -1,0 +1,6 @@
+openai
+numpy
+sklearn
+pickle5
+beautifulsoup4
+email
